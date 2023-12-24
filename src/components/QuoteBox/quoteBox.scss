@@ -1,0 +1,18 @@
+.quote-box {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid black;
+  padding: 40px;
+  text-align: center;
+  border-radius: 5px;
+
+  .text {
+    font-size: 2rem;
+  }
+  .author {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.2rem;
+  }
+}

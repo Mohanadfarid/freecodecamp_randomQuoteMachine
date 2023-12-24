@@ -10,6 +10,7 @@ export const fetchQuote = async () => {
     const data = await res.json();
     return data[0];
   } catch (error) {
+    console.log(error);
     return error;
   }
 };

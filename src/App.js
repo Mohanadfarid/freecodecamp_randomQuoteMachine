@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-import "./styles/main.scss";
 import { fetchQuote } from "./api";
-import QuoteBox from "./components/QuoteBox"
+import QuoteBox from "./components/QuoteBox/QuoteBox.jsx";
 
 function App() {
+  const handleNewQuote = async () => {
+    setquoteInfo(await fetchQuote());
+  };
 
   useEffect(() => {
-    const handleQuoteData = async () => {
-      setquoteInfo(await fetchQuote());
-    };
-    handleQuoteData();
+    handleNewQuote();
   }, []);
 
   const [quoteInfo, setquoteInfo] = useState({
@@ -17,7 +16,7 @@ function App() {
     author: "",
     category: "",
   });
-  return <QuoteBox info={quoteInfo}/>;
+  return <QuoteBox info={quoteInfo} geranteQuote={handleNewQuote}/>;
 }
 
 export default App;
