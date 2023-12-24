@@ -8,7 +8,7 @@ export const fetchQuote = async () => {
   try {
     const res = await fetch(baseUrl, { headers });
     const data = await res.json();
-    return data;
+    return data[0];
   } catch (error) {
     return error;
   }
