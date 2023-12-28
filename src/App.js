@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { fetchQuote } from "./api";
 import QuoteBox from "./components/QuoteBox/QuoteBox.jsx";
 
@@ -7,10 +7,14 @@ function generateRandomColor() {
 }
 
 function App() {
-  const handleNewQuote = async () => {
-    setquoteInfo(await fetchQuote());
-    handleChangingRandomCorlor();
-  };
+  const handleNewQuote = useCallback(
+    async () => {
+      setquoteInfo(await fetchQuote());
+      handleChangingRandomCorlor();
+    },
+    [],
+  )
+
 
   const handleChangingRandomCorlor = () => {
     const newColor = generateRandomColor();
@@ -20,7 +24,7 @@ function App() {
 
   useEffect(() => {
     handleNewQuote();
-  }, []);
+  }, [handleNewQuote]);
 
   const [randomColor, setRandomColor] = useState(generateRandomColor());
   const [quoteInfo, setquoteInfo] = useState({
