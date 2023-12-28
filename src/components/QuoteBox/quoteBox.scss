@@ -1,3 +1,6 @@
+body {
+  transition: all ease 1s;
+}
 .quote-box {
   position: relative;
   width: 100%;
@@ -11,12 +14,14 @@
 
   .text {
     font-size: 2rem;
+    transition: all ease 1s;
   }
   .author {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     font-size: 1.2rem;
+    transition: all ease 1s;
   }
   .new-quote {
     position: absolute;
@@ -28,6 +33,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all ease 1s;
   }
 
   .icons-container {
@@ -47,6 +53,7 @@
     background-color: grey;
     border-radius: 5px;
     margin: 0 2.5px;
+    transition: all ease 1s;
   }
   .icon {
     font-size: 1.4rem;
